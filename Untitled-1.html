@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Motorsports SIG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for animations and effects */
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .team-card:hover .team-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .team-overlay {
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-black text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-car text-red-600 text-2xl"></i>
+                    <span class="font-bold text-xl">The Motorsports SIG</span>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-red-500 transition">Home</a>
+                    <a href="#events" class="hover:text-red-500 transition">Events</a>
+                    <a href="#team" class="hover:text-red-500 transition">Team</a>
+                    <a href="#join" class="hover:text-red-500 transition">Join Us!</a>
+                    <a href="#pitch" class="hover:text-red-500 transition">Pitch Your Ideas!</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 hover:text-red-500 transition">Home</a>
+                <a href="#events" class="block py-2 hover:text-red-500 transition">Events</a>
+                <a href="#team" class="block py-2 hover:text-red-500 transition">Team</a>
+                <a href="#join" class="block py-2 hover:text-red-500 transition">Join Us!</a>
+                <a href="#pitch" class="block py-2 hover:text-red-500 transition">Pitch Your Ideas!</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-32 px-6 fade-in">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Fuel Your Passion for Motorsports</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Join our community of racing enthusiasts, engineers, and innovators pushing the limits of automotive performance.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#join" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-300 transform hover:scale-105">Join Now</a>
+                <a href="#events" class="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white px-8 py-3 rounded-lg font-semibold transition duration-300 transform hover:scale-105">Upcoming Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section id="events" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Upcoming Events</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Event 1 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg card-hover transition duration-300">
+                    <div class="h-48 bg-red-600 flex items-center justify-center">
+                        <i class="fas fa-flag-checkered text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded">Track Day</span>
+                            <span class="text-gray-500">June 15, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Autocross Challenge</h3>
+                        <p class="text-gray-600 mb-4">Test your skills on our custom autocross course. Open to all members with valid driver's license.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fas fa-map-marker-alt mr-1"></i> Speedway Park</span>
+                            <button class="text-red-600 hover:text-red-800 font-semibold">Register →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg card-hover transition duration-300">
+                    <div class="h-48 bg-blue-600 flex items-center justify-center">
+                        <i class="fas fa-tools text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Workshop</span>
+                            <span class="text-gray-500">June 22, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Engine Tuning 101</h3>
+                        <p class="text-gray-600 mb-4">Learn the fundamentals of engine performance tuning from our expert members.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fas fa-map-marker-alt mr-1"></i> Engineering Lab</span>
+                            <button class="text-blue-600 hover:text-blue-800 font-semibold">Register →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg card-hover transition duration-300">
+                    <div class="h-48 bg-green-600 flex items-center justify-center">
+                        <i class="fas fa-users text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">Social</span>
+                            <span class="text-gray-500">June 30, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Annual Meet & Greet</h3>
+                        <p class="text-gray-600 mb-4">Network with fellow motorsports enthusiasts and learn about our upcoming projects.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fas fa-map-marker-alt mr-1"></i> Club Lounge</span>
+                            <button class="text-green-600 hover:text-green-800 font-semibold">Register →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition duration-300">View All Events</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet The Team -->
+    <section id="team" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Meet The Team</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Our passionate team of motorsports enthusiasts driving innovation and community.</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member" class="w-full h-64 object-cover">
+                        <div class="team-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center p-4 text-white">
+                            <p class="text-sm mb-4">"Racing is in my blood. I've been building cars since I was 12."</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="hover:text-red-500"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="hover:text-red-500"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="hover:text-red-500"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-xl">Alex Turner</h3>
+                        <p class="text-red-600">Team Lead</p>
+                        <p class="text-gray-600 text-sm mt-2">Mechanical Engineer with 8 years of racing experience.</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member" class="w-full h-64 object-cover">
+                        <div class="team-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center p-4 text-white">
+                            <p class="text-sm mb-4">"Nothing excites me more than the perfect lap time."</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="hover:text-red-500"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="hover:text-red-500"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="hover:text-red-500"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-xl">Sarah Chen</h3>
+                        <p class="text-red-600">Technical Director</p>
+                        <p class="text-gray-600 text-sm mt-2">Aerodynamics specialist and amateur racer.</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Team Member" class="w-full h-64 object-cover">
+                        <div class="team-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center p-4 text-white">
+                            <p class="text-sm mb-4">"The sound of a well-tuned engine is music to my ears."</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="hover:text-red-500"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="hover:text-red-500"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="hover:text-red-500"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-xl">Marcus Rivera</h3>
+                        <p class="text-red-600">Chief Mechanic</p>
+                        <p class="text-gray-600 text-sm mt-2">Former pit crew member with 15+ years experience.</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Team Member" class="w-full h-64 object-cover">
+                        <div class="team-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center p-4 text-white">
+                            <p class="text-sm mb-4">"I bridge the gap between technology and racing."</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="hover:text-red-500"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="hover:text-red-500"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="hover:text-red-500"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-xl">Priya Patel</h3>
+                        <p class="text-red-600">Electronics Lead</p>
+                        <p class="text-gray-600 text-sm mt-2">Data acquisition and telemetry systems expert.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Want to Join? -->
+    <section id="join" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Want to Join Our Team?</h2>
+                    <p class="text-gray-600 mb-6">Whether you're an experienced racer, a mechanical wizard, or just passionate about motorsports, we have a place for you in our community.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check-circle text-red-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Access to Exclusive Events</h4>
+                                <p class="text-gray-600 text-sm">Track days, workshops, and networking opportunities</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check-circle text-red-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Learn from Experts</h4>
+                                <p class="text-gray-600 text-sm">Hands-on experience with seasoned professionals</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check-circle text-red-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Work on Real Projects</h4>
+                                <p class="text-gray-600 text-sm">Contribute to our competition vehicles and innovations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6">Apply Now</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="interest" class="block text-sm font-medium text-gray-700 mb-1">Area of Interest</label>
+                            <select id="interest" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                                <option value="">Select an option</option>
+                                <option value="racing">Racing</option>
+                                <option value="engineering">Engineering</option>
+                                <option value="mechanics">Mechanics</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="marketing">Marketing/Media</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="experience" class="block text-sm font-medium text-gray-700 mb-1">Experience (if any)</label>
+                            <textarea id="experience" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pitch Your Idea! -->
+    <section id="pitch" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Pitch Your Idea!</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Have an innovative motorsports project idea? We provide resources, mentorship, and funding for promising concepts.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="bg-red-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-lightbulb text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Submit Proposal</h3>
+                    <p class="text-gray-600">Present your idea through our online form or at our monthly pitch nights.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="bg-red-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Team Review</h3>
+                    <p class="text-gray-600">Our expert panel evaluates feasibility, innovation, and alignment with our mission.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="bg-red-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-rocket text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Launch Project</h3>
+                    <p class="text-gray-600">Approved projects receive funding, workspace, and team support to bring ideas to life.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-red-600 rounded-xl p-8 text-white">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <div class="lg:w-2/3 mb-6 lg:mb-0 lg:pr-8">
+                        <h3 class="text-2xl font-bold mb-4">Ready to Pitch?</h3>
+                        <p>Submit your motorsports innovation idea today and get feedback from our team within 7 business days.</p>
+                    </div>
+                    <div class="lg:w-1/3 flex justify-center lg:justify-end">
+                        <button class="bg-white text-red-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition duration-300">Start Your Pitch</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-black text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay in the Fast Lane</h2>
+                <p class="text-gray-300 mb-8">Subscribe to our newsletter for the latest updates on events, projects, and motorsports news.</p>
+                
+                <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-black">
+                    <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">Subscribe</button>
+                </form>
+                
+                <p class="text-gray-400 text-sm mt-4">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-car text-red-600 text-2xl"></i>
+                        <span class="font-bold text-xl">Velocity Motorsports</span>
+                    </div>
+                    <p class="text-gray-400">Fueling passion, innovation, and performance in motorsports since 2015.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#events" class="text-gray-400 hover:text-white transition">Events</a></li>
+                        <li><a href="#team" class="text-gray-400 hover:text-white transition">Our Team</a></li>
+                        <li><a href="#join" class="text-gray-400 hover:text-white transition">Join Us</a></li>
+                        <li><a href="#pitch" class="text-gray-400 hover:text-white transition">Pitch Ideas</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Gallery</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Sponsors</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-red-600"></i>
+                            <span>123 Racing Ave, Speedway City, SC 12345</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-red-600"></i>
+                            <span>(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-red-600"></i>
+                            <span>info@velocitymotorsports.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2023 Velocity Motorsports SIG. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (!document.getElementById('mobile-menu').classList.contains('hidden')) {
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+        
+        // Form submission handling (example)
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your submission! We will get back to you soon.');
+                this.reset();
+            });
+        });
+        
+        // Animation on scroll
+        window.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
